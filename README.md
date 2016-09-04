@@ -12,5 +12,7 @@ Then see \client\views\components\menu
 
 Sorry for this short description.
 If you have any question please contact me, i'm open for discussion.
+
 email: vladimir.minkin@gmail.com 
+
 skype: rimidalv.niknim
