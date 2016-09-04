@@ -1,0 +1,13 @@
+<template name="menuSubSection">
+   <div class="item">
+      <div class="content">
+      {{#if isActive}}
+         <div class="header">{{data.name}}</div>
+      {{else}}
+         <a style="color:teal;" {{b "click:NavigateOnSubsection"}}>
+            {{data.name}}
+         </a>
+      {{/if}}
+      </div>
+   </div>
+</template>

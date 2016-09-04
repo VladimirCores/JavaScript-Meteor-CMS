@@ -1,0 +1,21 @@
+<template name="contentItem">
+   <div class="ui container">
+      <div class="ui fluid card">
+         {{#if isText}}
+            {{>textContent}}
+         {{else}}
+            {{#if isImage}}
+               {{>imageContent}}
+            {{else}}
+               {{#if isVideo}}
+                  {{>videoContent}}
+               {{else}}
+                  {{#if isPack}}
+                     {{>packContent}}
+                  {{/if}}
+               {{/if}}
+            {{/if}}
+         {{/if}}
+      </div>
+   </div>
+</template>

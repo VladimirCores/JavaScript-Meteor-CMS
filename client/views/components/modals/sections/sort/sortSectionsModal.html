@@ -1,0 +1,25 @@
+<template name="sortSectionsModal">
+  <div class="ui small modal">
+      <div class="header">
+        Изменить положение секций
+      </div>
+      <div class="content">
+        <div {{b "ref: sortContainer"}} >
+        {{#each item in this}}
+          <div class="ui secondary center aligned segment noselect">
+            <h4 class="ui header">{{item.data.name}}</h4>
+          </div>
+        {{/each}}
+        </div>
+      </div>
+      <div class="actions">
+        <div class="ui negative button">
+          Отмена
+        </div>
+        <div class="ui positive right labeled icon button" {{on "click: ProcessConfirm"}} >
+          Ok
+          <i class="checkmark icon"></i>
+        </div>
+      </div>
+    </div>
+</template>

@@ -1,0 +1,18 @@
+<template name="textContent">
+   <div class="content">
+      {{>contentActions}}
+      <div class="header">
+         <i class="newspaper icon handler"></i>
+         №{{position}} : <span {{b "text: this.data.title"}}></span>
+      </div>
+      <div class="meta">
+         изменен: <span {{b "text: parent.whenModified"}}></span>
+      </div>
+      <div class="description"
+      {{b "html: this.data.html, style: { background: textContentBackground }"}}></div>
+   </div>
+   <div class="extra content">
+      <i class="check icon"></i>
+      создан: <span {{b "text: parent.whenCreated"}}></span>
+   </div>
+</template>

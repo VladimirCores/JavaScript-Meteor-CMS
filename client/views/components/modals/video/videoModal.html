@@ -1,0 +1,51 @@
+<template name="videoModal">
+  <div class="ui small modal">
+    <div class="header">
+      <div class="ui transparent fluid icon input">
+        <span style="margin-right:1rem;font-weight:normal;">№{{position}}</span><input type="text" {{b "value: title"}} {{on "input: TitleChanged"}} placeholder="Введите название">
+        <i class="film icon"></i>
+      </div>
+    </div>
+    <div class="content" style="position:relative;">
+        <button
+          class="circular ui icon button thumbchooser"
+          {{b "click: ChooseImage, ref: thumbChooserPopup, style: thumbChooserColor, if: isVideoFileAvailable"}}>
+          <i class="file image outline icon"></i>
+        </button>
+        <button
+         class="circular ui icon button screenshooter"
+         {{b "click: SnapShoot, ref: snapShootBtn, if: isVideoFileAvailable"}}>
+         <i class="camera retro icon"></i>
+      </button>
+        <div {{on "click: ChooseVideo"}} {{b "ref: videoContainer"}} class="ui video">
+        </div>
+        <div class="ui videoinfo" {{b "ref: videoInfo"}}></div>
+        <input
+        {{on "change: VideoChanged"}}
+        {{b "ref: videoChooser"}}
+        type="file"
+        accept="{{acceptableVideoTypes}}"
+        style="display:none;"/>
+        <input
+        {{on "change: ImageChanged"}}
+        {{b "ref: imageChooser"}}
+        type="file"
+        accept="{{acceptableImageTypes}}"
+        style="display:none;" />
+
+      <div class="ui form videodescriptor">
+        <div class="field">
+          <label>Текст</label>
+          <textarea {{b "value: text"}} {{on "input: TextChanged"}} class="videotext" placeholder="Здесь основное описание"></textarea>
+        </div>
+      </div>
+    </div>
+    <div class="actions">
+      <div class="ui deny button">Отмена</div>
+      <button {{on "click: ProcessConfirm"}} {{b "enable: confirmEnabled"}} class="ui positive right labeled icon button" disabled="true">
+        Сохранить
+        <i class="checkmark icon"></i>
+      </button>
+    </div>
+  </div>
+</template>

@@ -1,0 +1,38 @@
+<template name="imageAdvancedModal">
+  <div class="ui long modal image">
+    <div class="header">
+      <div class="ui transparent fluid icon input">
+        <span style="margin-right:1rem;font-weight:normal;">№{{position}}</span><input type="text" {{b "value: title"}} {{on "input: TitleChanged"}} placeholder="Введите название">
+        <i class="photo icon"></i>
+      </div>
+    </div>
+    <div class="image content">
+      <div class="ui large image"
+      {{on "click: ChooseImage"}}
+      {{b "ref: imageContainer, disable: isImageLoading"}}>
+        <div style="position: absolute; font-size:1rem; padding:0.5rem 0;" {{b "ref: imageInfo"}}></div>
+      </div>
+      <div class="description" style="width:100%;">
+        <div class="ui form">
+          <div class="field">
+            <label>Текст</label>
+            <textarea {{b "value: text"}} {{on "input: TextChanged"}} name="text" placeholder="Здесь основное описание"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+    <input
+    {{on "change: ImageChanged"}}
+    {{b "ref: imageChooser"}}
+    type="file"
+    accept="{{acceptableImageTypes}}"
+    style="visibility:hidden;display:hidden;" />
+    <div class="actions">
+      <div class="ui deny button">Отмена</div>
+      <button {{on "click: ProcessConfirm"}} {{b "ref: confirmBtn, enable: confirmEnabled"}} class="ui positive right labeled icon button" disabled="true">
+        Сохранить
+        <i class="checkmark icon"></i>
+      </button>
+    </div>
+  </div>
+</template>

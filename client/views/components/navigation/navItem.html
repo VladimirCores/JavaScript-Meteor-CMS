@@ -1,0 +1,15 @@
+<template name="navItem">
+   <div class="item">
+      <div class="content">
+         {{#if isLast}}
+            <div class="header">
+               {{name}}
+            </div>
+         {{else}}
+            <a style="color:teal;" {{on "click: NavigateToMe"}}>
+               {{name}}
+            </a>
+         {{/if}}
+      </div>
+   </div>
+</template>

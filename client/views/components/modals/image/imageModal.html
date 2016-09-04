@@ -1,0 +1,23 @@
+<template name="imageModal">
+  <div class="ui small modal">
+    <div class="header">
+      <div class="ui transparent fluid icon input">
+        <span style="margin-right:1rem;font-weight:normal;">№{{position}}</span>
+        <input type="text" {{b "value: this.data.title"}} placeholder="Введите название">
+        <i class="photo icon"></i>
+      </div>
+    </div>
+    <div class="content">
+      <div {{on "click: ChooseImage"}} {{b "ref: imageContainer, enable: isImageLoading"}} class="ui image"></div>
+      <input {{on "change: ImageChanged"}} {{b "ref: imageChooser"}} type="file" style="visibility:hidden;display:hidden;" />
+    </div>
+    <div class="actions">
+      <div class="ui deny button">Отмена</div>
+      <button {{on "click: ProcessConfirm"}} {{b "ref: confirmBtn"}} class="ui positive right labeled icon button" disabled="true">
+        Сохранить
+        <i class="checkmark icon"></i>
+      </button>
+    </div>
+
+  </div>
+</template>

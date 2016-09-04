@@ -1,0 +1,28 @@
+<template name="loadfonts">
+
+<script type="text/javascript">
+
+let fonts = CMSSettings.public.cms.fonts;
+let head = $("head");
+_.forEach(fonts.regular, function (font) {
+   head.prepend("<style type=\"text/css\">" +
+   "@font-face {\n" +
+   "font-family: \""+ font.fontName +"\";\n" +
+   "src: local('☺'), url('/fonts/"+ font.fontPath +"');\n" +
+   "font-weight: \"" + font.fontWeight + "\";\n" +
+   "}</style>");
+});
+
+WebFontConfig = {
+  google: fonts.google
+};
+(function() {
+  var wf = document.createElement('script');
+  wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+  wf.type = 'text/javascript';
+  wf.async = 'true';
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(wf, s);
+})(); </script>
+
+</template>

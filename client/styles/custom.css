@@ -1,0 +1,327 @@
+@font-face {
+  font-family: 'Roboto';
+  src: local('Roboto'), url('/fonts/Roboto-Thin.ttf') format('truetype');
+  font-weight: 300;
+}
+@font-face {
+  font-family: 'Roboto';
+  src: local('Roboto'), url('/fonts/Roboto-Regular.ttf') format('truetype');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Panton';
+  src: local('Panton'), url('/fonts/Panton-Regular.otf') format('truetype');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Roboto';
+  src: local('Roboto'), url('/fonts/Roboto-Bold.ttf') format('truetype');
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'Noto Sans';
+  src: local('Noto Sans'), url('/fonts/NotoSans-Regular.ttf') format('truetype');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Noto Sans';
+  src: local('Noto Sans'), url('/fonts/NotoSans-Bold.ttf') format('truetype');
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: local('Helvetica Neue'), url('/fonts/HelveticaNeueCyr-Thin.otf');
+  font-weight: 300;
+}
+@font-face {
+  font-family: 'Helvetica Neue Light';
+  src: local('Helvetica Neue Light'), url('/fonts/HelveticaNeueCyr-Light.otf');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Helvetica Neue Medium';
+  src: local('Helvetica Neue Medium'), url('/fonts/HelveticaNeueCyr-Medium.otf');
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'Helvetica Neue Bold';
+  src: local('Helvetica Neue Bold'), url('/fonts/HelveticaNeueCyr-Bold.otf');
+  font-weight: 700;
+}
+html,
+body {
+  background-color: #fafafa;
+}
+.ui.popup {
+  padding: 0rem;
+  box-sizing: border-box;
+}
+.ui.popup .content img {
+  padding: 0.5rem;
+  display: block;
+  max-width: 300px;
+  min-width: 100px;
+  height: auto;
+}
+.removeicon {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  opacity: 0.1;
+  border: 1px solid white;
+}
+.removeicon:hover {
+  opacity: 1;
+}
+.noselect {
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Chrome/Safari/Opera */
+  -khtml-user-select: none;
+  /* Konqueror */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* IE/Edge */
+  user-select: none;
+  /* non-prefixed version, currently
+   not supported by any browser */
+}
+.sortablesectionghost {
+  background-color: #232323 !important;
+  color: #f1f1f1 !important;
+}
+.sortablesectionghost * {
+  color: #f1f1f1 !important;
+}
+.login.grid {
+  height: 100%;
+}
+.login .column {
+  max-width: 450px;
+  margin: auto;
+}
+.login .at-pwd-form .at-btn {
+  background-color: #00b5ad;
+}
+.login .at-pwd-form .at-btn:hover {
+  background-color: #00c5ad;
+}
+.notfound {
+  margin-top: 2rem;
+}
+.logout {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+.ivrlogo {
+  position: relative;
+  left: 0.5rem;
+  top: 1rem;
+  width: 3rem;
+  height: auto;
+}
+.swipe-container {
+  overflow: hidden;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background: #f1f1f1;
+}
+.swipe-container .swiper-slide {
+  max-width: 10rem;
+  min-width: 5rem;
+  margin-right: 1rem;
+  text-align: center;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.container.header {
+  text-align: center;
+  margin: 0 0 2rem 0;
+}
+.container .grid .row {
+  padding: 0;
+}
+.container .grid .row li.item {
+  max-width: 10rem;
+  min-width: 1rem;
+}
+.container.main {
+  margin-bottom: 1.5rem;
+}
+.container.main.fixed {
+  background-color: #FFFFFF;
+  border: none;
+}
+.content {
+  margin: 0 auto;
+  width: 100%;
+}
+.content .container {
+  width: 100%;
+  padding: 1rem;
+}
+.content .container .card div.image {
+  height: 300px;
+  overflow: visible;
+  background-image: url(http://placehold.it/300x300);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  border-top: #bbb 1px solid;
+  border-bottom: #bbb 1px solid;
+}
+.content .container .card div.image img {
+  width: 100%;
+  height: auto;
+}
+.content .container .card div.video video {
+  width: 100%;
+  height: auto;
+  border-top: #bbb 1px solid;
+  border-bottom: #bbb 1px solid;
+}
+.content .container .card .content.packcontent .packgrid .packitem {
+  height: 17rem;
+}
+.content .container .card .content.packcontent .packgrid .packitem div.segment {
+  height: 100%;
+  background-position: center center;
+  background-clip: border-box;
+  background-size: cover;
+}
+.content .container .card .content .description {
+  overflow-wrap: break-word;
+}
+.content .container .card .dropdown .icon {
+  color: #aaa;
+}
+.mediaContentBackground {
+  border-style: dashed;
+  min-height: 100px;
+  border-color: #ddd;
+  box-sizing: border-box;
+  overflow: visible;
+  background-image: none;
+  background-color: #f1f1f1;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.mce-tooltip {
+  position: fixed !important;
+}
+.mce-panel.mce-floatpanel.mce-menu {
+  position: fixed !important;
+}
+.modal:not(.image) {
+  margin-bottom: 2rem;
+}
+.modal:not(.image) .content button.thumbchooser {
+  position: absolute;
+  top: 2.5rem;
+  right: 2rem;
+  z-index: 1000;
+}
+.modal:not(.image) .content button.screenshooter {
+  position: absolute;
+  top: 6rem;
+  right: 2rem;
+  z-index: 1000;
+}
+.modal:not(.image) .content .packofmedia {
+  margin-top: 1rem;
+}
+.modal:not(.image) .content .packofmedia .column .packimage {
+  height: 15rem;
+  border: 1px solid black;
+  overflow: hidden;
+  background-position: center center;
+  background-clip: border-box;
+  background-size: cover;
+}
+.modal:not(.image) .content div.ui.video {
+  width: 100%;
+  height: 300px;
+  border-width: 2px;
+  border-style: dashed;
+  min-height: 100px;
+  border-color: #ddd;
+  box-sizing: border-box;
+  overflow: visible;
+  background-image: none;
+  background-color: #f1f1f1;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.modal:not(.image) .content div.ui.video video {
+  width: 100%;
+  height: auto;
+}
+.modal:not(.image) .content div.ui.videodescriptor {
+  margin-top: 1rem;
+}
+.modal:not(.image) .content div.ui.videoinfo {
+  position: relative;
+  text-align: center;
+  padding-top: 1rem;
+}
+.modal:not(.image) .content div.ui.image {
+  width: 100%;
+  height: 300px;
+  border-width: 2px;
+  border-style: dashed;
+  min-height: 100px;
+  border-color: #ddd;
+  box-sizing: border-box;
+  overflow: visible;
+  background-image: none;
+  background-color: #f1f1f1;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.modal:not(.image) .content div.ui.image img {
+  width: 100%;
+  height: auto;
+}
+.modal:not(.image) .content .videotext {
+  height: 8em;
+}
+.tab .text.preview {
+  width: 100%;
+  height: 2rem;
+}
+.tab .text.preview img {
+  position: relative;
+  box-sizing: border-box;
+  border: 1px solid grey;
+}
+.modal.image .content.image div.ui.image {
+  border-width: 1px;
+  border-style: dashed;
+  min-height: 100px;
+  border-color: #ddd;
+  box-sizing: border-box;
+  overflow: visible;
+  background-image: none;
+  background-color: #f1f1f1;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}

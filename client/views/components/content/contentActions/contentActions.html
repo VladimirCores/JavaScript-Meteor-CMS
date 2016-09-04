@@ -1,0 +1,12 @@
+<template name="contentActions">
+   <div class="right floated">
+      <div class="ui right pointing dropdown icon" {{b "ref: dropdown"}}>
+         <i class="settings icon"></i>
+         <div class="menu">
+            {{#each contentActions}}
+               {{>contentActionItem}}
+            {{/each}}
+         </div>
+      </div>
+   </div>
+</template>

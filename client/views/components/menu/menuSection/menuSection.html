@@ -1,0 +1,11 @@
+<template name="menuSection">
+<div class="item" {{b "ref:menuItem, click: parent.select(_id)"}}>
+  <div class="right floated" {{b "ref: popupHolder, if: hasIcon"}}>
+      <i class="icon file image outline"></i>
+  </div>
+   <i class="large folder icon"></i>
+   <div class="content">
+     <a style="color:teal !important;" class="header">{{data.name}}</a>
+   </div>
+</div>
+</template>

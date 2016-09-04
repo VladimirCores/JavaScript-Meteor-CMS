@@ -1,0 +1,14 @@
+<template name="navigation">
+     <small>
+        {{#if navigation}}
+            Путь к секции:&nbsp;&nbsp;
+        {{else}}
+            Выберите секцию в основном меню!
+        {{/if}}
+     </small>
+     <div class="ui horizontal divided list">
+        {{#each navigation}}
+           {{> navItem}}
+        {{/each}}
+     </div>
+</template>

@@ -1,0 +1,83 @@
+<template name="textModal">
+  <div class="ui large modal text">
+    <div class="header">
+      <div class="ui transparent fluid icon input">
+        <span style="margin-right:1rem;font-weight:normal;">№{{position}}</span><input type="input" placeholder="Введите название" {{b "value: title"}}>
+        <i class="newspaper icon"></i>
+      </div>
+    </div>
+    <div class="content">
+      <div class="ui top attached tabular menu tabs" {{b "ref: tabMenu"}}>
+        <a class="item active" data-tab="edit">Текст</a>
+        <a class="item" data-tab="preview">Предпросмотр</a>
+      </div>
+      <div class="ui bottom attached tab segment active" data-tab="edit">
+        <div class="ui form">
+          <div class="field">
+            <label>Редактор</label>
+            <textarea {{b "ref: textEditor"}} class="texteditor" placeholder="Здесь основное описание"></textarea>
+          </div>
+        </div>
+        {{#if isInRole 'admin'}}
+        <div class="ui segment">
+          <h4 class="ui center aligned header">
+            Текст в картинку (настройки)
+          </h4>
+          <div class="ui form">
+            <div class="field">
+              <div class="ui toggle checkbox" {{b "ref: generateCheckbox"}}>
+                <input type="checkbox" tabindex="0" class="hidden" {{b "check: generateChecked"}}>
+                <label>Создать картинку?</label>
+              </div>
+            </div>
+            <div class="four fields">
+              <div class="field">
+                <label>Ширина картинки (px):</label>
+                <input type="number" value="1080"
+                {{b "enable: generateChecked, value: imageWidth, change: WidthChanged()"}}>
+              </div>
+              <div class="field">
+                <label>Отступ от краев (px):</label>
+                <input type="number" max="1000" min="0" step="1" value="0"
+                {{b "enable: generateChecked, value: imagePadding, change: PaddingChanged()"}}>
+              </div>
+              <div class="field">
+                <label>Масштабирование:</label>
+                <input type="number" max="5" min="1" step="0.1" value="1"
+                {{b "enable: generateChecked, value: textScale"}}>
+              </div>
+              <div class="field">
+                <label>Высота строки (px):</label>
+                <input type="number" max="1000" min="0" step="1" value="20"
+                {{b "enable: generateChecked, value: lineHeight, change: LineHeightChanged()"}}>
+              </div>
+            </div>
+            <div class="field">
+               <div class="ui checkbox" style="margin-top: 1rem;">
+                 <input type="checkbox" {{b "check: saveAsStandart"}}>
+                 <label>Сохранить настройки как стандартные</label>
+               </div>
+            </div>
+            <div class="field">
+               <div class="ui checkbox" style="">
+                 <input type="checkbox" {{b "check: WidthToContainer"}}>
+                 <label>Применить ширину к тексту</label>
+               </div>
+            </div>
+          </div>
+        </div>
+        {{/if}}
+      </div>
+      <div class="ui bottom attached tab segment" data-tab="preview">
+        <div class="text preview">
+        </div>
+      </div>
+    </div>
+    <div class="actions">
+      <div class="ui cancel button">Отменить</div>
+      <button {{on "click: ProcessConfirm"}} {{b "ref: confirmBtn"}} class="ui positive right labeled icon button">Сохранить
+        <i class="checkmark icon"></i>
+      </button>
+    </div>
+  </div>
+</template>

@@ -1,0 +1,82 @@
+<template name="sectionModal">
+  <div class="ui large modal image section">
+    <div class="header">
+      <div class="ui transparent fluid icon input">
+         <input type="input" placeholder="Заголовок секции" {{b "value: name"}}>
+      </div>
+    </div>
+    <div class="image content">
+      <div class="ui large image" {{on "click: ChooseImage"}} {{b "ref: imageContainer"}}>
+        <button class="circular ui icon negative button removeicon" {{b "ref: removeIconBtn, if: canDeleteIcon, click: RemoveIcon"}}>
+          <i class="icon trash"></i>
+        </button>
+      </div>
+      <div class="description" style="width:100%;">
+         {{#if isInRole 'admin'}}
+         <div class="ui fluid input">
+           <input type="input" placeholder="Введите имя секции" {{b "value: title"}}>
+         </div>
+         {{/if}}
+        <div class="ui top attached tabular menu tabs" {{b "ref: tabMenu"}}>
+          <a class="item active" data-tab="edit">Настройки</a>
+          <a class="item" data-tab="preview">Предпросмотр</a>
+        </div>
+        <div class="ui bottom attached tab segment active" data-tab="edit">
+          <div class="ui segment">
+            <h4 class="ui center aligned header">
+              Текст в картинку
+            </h4>
+            <div class="ui form">
+              <div class="field">
+                <div class="ui toggle checkbox" {{b "ref: generateCheckbox"}}>
+                  <input type="checkbox" tabindex="0" class="hidden" {{b "check: generateChecked"}}>
+                  <label>Создать картинку?</label>
+                </div>
+              </div>
+              <div class="three fields">
+                <div class="field">
+                  <label>Ширина (px):</label>
+                  <input type="number" value="1080" {{b "enable: generateChecked, value: imageWidth"}}>
+                </div>
+                <div class="field">
+                  <label>Размер текста (px):</label>
+                  <input type="number" max="1000" min="1" step="1" value="24" {{b "enable: generateChecked, value: fontSize, change: FontSizeChanged"}}>
+                </div>
+                <div class="field">
+                  <label>Высота строки (px):</label>
+                  <input type="number" max="1000" min="1" step="1" value="24" {{b "enable: generateChecked, value: lineHeight"}}>
+                </div>
+              </div>
+              <div class="field">
+                 <div class="ui checkbox" style="margin-top: 1rem;">
+                   <input type="checkbox" {{b "check: centerize"}}>
+                   <label>Выровнять по центру</label>
+                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ui bottom attached tab segment" data-tab="preview">
+          <div class="text preview">
+          </div>
+        </div>
+        {{#if showSubSectionCheckbox}}
+          <div class="ui checkbox" style="margin-top: 1rem;">
+            <input type="checkbox" {{b "check: isSubsection"}}>
+            <label>Подсекция к активной секции</label>
+          </div>
+        {{/if}}
+      </div>
+    </div>
+    <input {{on "change: ImageChanged"}} {{b "ref: imageChooser"}} type="file" style="visibility:hidden;display:none;" />
+    <div class="actions">
+      <div class="ui negative button">
+        Отмена
+      </div>
+      <div class="ui positive right labeled icon button" {{on "click: ProcessConfirm"}} >
+        Ok
+        <i class="checkmark icon"></i>
+      </div>
+    </div>
+  </div>
+</template>

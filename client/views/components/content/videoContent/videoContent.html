@@ -1,0 +1,22 @@
+<template name="videoContent">
+  <div class="content">
+    {{>contentActions}}
+    <div class="header">
+      <i class="film icon handler"></i>
+      №{{position}} : <span {{b "text: this.data.title"}}></span>
+    </div>
+    <div class="meta">
+      изменен: <span {{b "text:parent.whenModified"}}></span>
+    </div>
+  </div>
+  <div class="video" {{b "ref: videoContainer, style: { height: videoHeight }" }}>
+       <video src="{{video}}" {{on "loadedmetadata: UpdateHeight"}} controls></video>
+  </div>
+  {{#if this.data.text}}
+    <div class="content" {{b "text: this.data.text"}}></div>
+  {{/if}}
+  <div class="extra content">
+    <i class="check icon"></i>
+    создан: <span {{b "text:parent.whenCreated"}}></span>
+  </div>
+</template>

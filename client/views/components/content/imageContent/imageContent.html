@@ -1,0 +1,22 @@
+<template name="imageContent">
+  <div class="content">
+    {{>contentActions}}
+    <div class="header">
+      <i class="photo icon handler"></i>
+      №{{position}} : <span {{b "text: this.data.title"}}></span>
+    </div>
+    <div class="meta">
+      изменен: <span {{b "text:parent.whenModified"}}></span>
+    </div>
+  </div>
+  <div class="image" {{b "ref: imageContainer, style: { height: imageHeight }" }}>
+      <img src="{{image}}" {{on "load: UpdateHeight"}}>
+  </div>
+  {{#if this.data.text}}
+    <div class="content" {{b "text: this.data.text"}}></div>
+  {{/if}}
+  <div class="extra content">
+    <i class="check icon"></i>
+    создан: <span {{b "text:parent.whenCreated"}}></span>
+  </div>
+</template>

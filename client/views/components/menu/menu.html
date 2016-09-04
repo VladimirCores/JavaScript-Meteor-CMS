@@ -1,0 +1,56 @@
+<template name="menu">
+<div class="ui main fluid container" {{b "ref: mainMenu"}}>
+   <div class="ui container text">
+      <div class="ui middle aligned grid">
+         <div class="centered row under" style="margin-top:1rem;">
+            <div class="center aligned column">
+               {{#if section}}
+                  <div class="ui celled horizontal list">
+                     {{#each allSubSections}}
+                        {{> menuSubSection}}
+                     {{/each}}
+                  </div>
+               {{else}}
+                  <small>Основные секции:</small>
+               {{/if}}
+            </div>
+         </div>
+         <div class="row ui divider" style="margin-top: 0rem; margin-bottom: 1rem;"></div>
+         <div class="row" style="min-height: 5rem;">
+            <div class="left floated three wide column">
+               {{#if section}}
+                  <button class="ui labeled icon button"
+                     {{b "click: NavigateBack"}}>
+                     <i class="left arrow icon"></i>
+                     Назад
+                  </button>
+               {{else}}
+                  <b>Секции:</b>
+               {{/if}}
+            </div>
+            <div class="ten wide column">
+               <div class="ui relaxed tiny middle aligned selection divided list">
+                  {{#each subsectionActiveSection}}
+                     {{>menuSection}}
+                  {{/each}}
+               </div>
+            </div>
+            <div class="right floated three wide column">
+               <div class="ui dropdown">
+                  <div class="ui buttons teal">
+                     <div class="ui button">Действие</div>
+                     {{>menuActions}}
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="row" style="margin: 0.5rem 0 1rem 0;">
+            <div class="column">
+               {{>navigation}}
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="ui divider" style="margin-top: 0rem; margin-bottom: 0rem;"></div>
+</div>
+</template>

@@ -1,0 +1,36 @@
+<template name="packModal">
+  <div class="ui long modal">
+    <div class="header">
+      <div class="ui transparent fluid icon input">
+        <span style="margin-right:1rem;font-weight:normal;">№{{position}}</span>
+        <input type="text" {{b "value: packTitle"}} placeholder="Введите название">
+        <i class="archive icon"></i>
+      </div>
+    </div>
+    <div class="content">
+      <span {{on "click: ChooseImage"}} class="ui button">Выбрать картинки</span>
+      {{#if showSeparateImagesCheckbox}}
+      <span class="ui checkbox" style="margin-left: 1rem;">
+        <input type="checkbox" {{b "check: saveAsSeparateImages"}}>
+        <label>Сохранить как отдельные картинки</label>
+     </span>
+     {{/if}}
+      <div class="ui three column grid packofmedia" {{b "ref: imageContainer"}}>
+         {{#each packImages}}
+            <div class="column">
+               <div class="packimage" style="background-image:url({{GetImageURL(this)}})"></div>
+            </div>
+         {{/each}}
+      </div>
+      <input multiple accept="{{acceptableImageTypes}}" {{on "change: ImageChanged"}} {{b "ref: imageChooser"}} type="file" style="visibility:hidden;display:hidden;" />
+    </div>
+    <div class="actions">
+      <div class="ui deny button">Отмена</div>
+      <button {{on "click: ProcessConfirm"}} {{b "ref: confirmBtn, enable: confirmEnabled"}} class="ui positive right labeled icon button" disabled="true">
+        Сохранить
+        <i class="checkmark icon"></i>
+      </button>
+    </div>
+
+  </div>
+</template>

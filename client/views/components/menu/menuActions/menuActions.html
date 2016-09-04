@@ -1,0 +1,27 @@
+<template name="menuActions">
+   <div class="ui floating dropdown icon button"
+      {{b "ref: dropdown"}}>
+      <i class="dropdown icon"></i>
+      <div class="menu">
+         <div class="header">
+            <i class="info circle icon"></i>
+            Добавить:
+         </div>
+         <div class="ui fitted divider"></div>
+         {{#each contentActions}}
+            {{>menuActionItem}}
+         {{/each}}
+         {{#if isInRole 'admin'}}
+           <div class="ui hidden divider"></div>
+           <div class="header">
+              <i class="info circle icon"></i>
+              Секции:
+           </div>
+          <div class="ui fitted divider"></div>
+           {{#each sectionActions}}
+              {{>menuActionItem}}
+           {{/each}}
+         {{/if}}
+      </div>
+   </div>
+</template>
