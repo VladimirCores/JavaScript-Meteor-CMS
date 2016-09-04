@@ -9,3 +9,8 @@ View just signalize that something is happen and all magic and data processing i
 Special tool for "commands" - Comman and Q-deferred.
 
 Then see \client\views\components\menu
+
+Sorry for this short description.
+If you have any question please contact me, i'm open for discussion.
+email: vladimir.minkin@gmail.com 
+skype: rimidalv.niknim
