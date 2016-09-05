@@ -1,6 +1,7 @@
 # JavaScript-Meteor-CMS
 
-This is my personal vision on how software should work. The main conception here is MVVMC, where i use commands in term of "C".
+This is my personal vision on how software should work. 
+The main conception here is MVVMC, where i use commands in term of "C".
 
 Every program starts from data, data defines everything. So please start from VO (see lib/vos).
 
